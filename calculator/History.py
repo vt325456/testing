@@ -1,9 +1,8 @@
 from calculator.Calculation import Calculation
-from calculator import Calculator
-from typing import List
+from typing import List,Callable
 
 class History:
-    history = List[Calculator] = []
+    history = []
 
     @classmethod
     def history_add(cls,Calculation: Calculation):
@@ -26,4 +25,4 @@ class History:
     
     @classmethod
     def history_get_operation(cls, operation_name:str) -> List[Calculation]:
-        return [calc_obj for calc_obj in cls.history if i.operation.__name__ == operation_name]
+        return [calc_obj for calc_obj in cls.history if calc_obj.operation.__name__ == operation_name]
