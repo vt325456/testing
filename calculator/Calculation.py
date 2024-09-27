@@ -15,5 +15,5 @@ class Calculation:
     def operate(self) -> Decimal:
         return self.operation(self.a, self.b)
     
-    def _repr(self):
+    def repr(self):
         return f"Calculation({self.a}, {self.b}, {self.operation.__name__})"

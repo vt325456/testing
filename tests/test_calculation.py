@@ -1,8 +1,8 @@
-""" """
+""" Module String """
+from decimal import Decimal
 import pytest
 from calculator.Calculation import Calculation
 from calculator.operations import add,subtract,multiply,divide
-from decimal import Decimal
 
 @pytest.mark.parametrize("value1, value2, operation, expected",
 [
@@ -24,7 +24,7 @@ def test_operate(value1, value2, operation, expected):
 def test__repr():
     ''' method documentation '''
     obj = Calculation(Decimal('5'), Decimal('5'), add)
-    assert obj._repr() == "Calculation(5, 5, add)"
+    assert obj.repr() == "Calculation(5, 5, add)"
 
 
 def test_dividebyzero():

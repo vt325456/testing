@@ -1,7 +1,7 @@
 from calculator.Calculation import Calculation
 from typing import List,Callable
 
-class History:
+class Calculations:
     history = []
 
     @classmethod
@@ -21,7 +21,6 @@ class History:
     @classmethod
     def history_print(cls) -> List[Calculation]:
         return cls.history
-    
     
     @classmethod
     def history_get_operation(cls, operation_name:str) -> List[Calculation]:
