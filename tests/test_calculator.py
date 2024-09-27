@@ -1,18 +1,23 @@
-'''My Calculator Test'''
-from calculator import add, subtract,multiply,divide
+''' My Calculator Test using Calculator object'''
+from calculator import Calculator
+import pytest
 
-def test_addition():
-    '''Test that addition function works '''    
-    assert add(2,2) == 4
+def test_add():
+    '''Testing the add method from the Calculator class (Calling operations.py function)'''
+    output = Calculator.add(2,3)
+    assert  output == 5
 
-def test_subtraction():
-    '''Test that addition function works '''    
-    assert subtract(2,2) == 0
+def test_subtract():
+    '''Testing the subtract method from the Calculator class (Calling operations.py function)'''
+    output = Calculator.subtract(4,3)
+    assert output == 1
 
 def test_multiply():
-    '''Test that multiply function works '''    
-    assert multiply(2,2) == 4
+    '''Testing the multiply method from the Calculator class (Calling operations.py function)'''
+    output = Calculator.multiply(2,2)
+    assert output == 4
 
 def test_divide():
-    '''Test that addition function works '''    
-    assert divide(2,2) == 1
+    '''Testing the divide method from the Calculator class (Calling operations.py function)'''
+    output = Calculator.divide(8,2)
+    assert output == 4
