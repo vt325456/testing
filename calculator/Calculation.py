@@ -1,5 +1,5 @@
 class Calculation:
-    def __init__(self, operation, a, b):
+    def __init__(self, a, b, operation):
         self.operation = operation
         self.a = a
         self.b = b

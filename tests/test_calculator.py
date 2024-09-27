@@ -1,6 +1,5 @@
 ''' My Calculator Test using Calculator object'''
 from calculator import Calculator
-import pytest
 
 def test_add():
     '''Testing the add method from the Calculator class (Calling operations.py function)'''
