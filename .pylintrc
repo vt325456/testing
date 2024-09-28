@@ -8,7 +8,8 @@ load-plugins=pylint_django
 # Only show these errors
 # Disable the following checks (example list):
 disable= unused-argument,
-         redefined-outer-name
+         redefined-outer-name,
+         line-too-long
 
 [REPORTS]
 # Set the output format. Available formats: text, parseable, colorized, json, msvs (visual studio) and html
