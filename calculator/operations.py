@@ -37,6 +37,6 @@ def divide(a: Decimal, b: Decimal) -> Decimal:
     Raises : raises a ValueError when second operand is equal to zero 
     '''
     if b == 0 :
-        raise ValueError("DivideByZero Exception Occured")
+        raise ValueError("Cannot divide by zero")
     else:
         return a / b

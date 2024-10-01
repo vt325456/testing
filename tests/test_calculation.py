@@ -10,33 +10,20 @@ import pytest
 from calculator.Calculation import Calculation
 from calculator.operations import add,subtract,multiply,divide
 
-# parametrized test for all the types of operations
-@pytest.mark.parametrize("value1, value2, operation, expected",
-[
-    (Decimal('2'), Decimal('2'), add, Decimal('4')),
-    (Decimal('2'), Decimal('2'), subtract, Decimal('0')),
-    (Decimal('2'), Decimal('2'), multiply, Decimal('4')),
-    (Decimal('10'), Decimal('2'), divide, Decimal('5')),
-    (Decimal('4'), Decimal('3'), add, Decimal('7')),
-    (Decimal('4'), Decimal('3'), subtract, Decimal('1')),
-    (Decimal('10'), Decimal('3'), multiply, Decimal('30')),
-    (Decimal('14'), Decimal('2'), divide, Decimal('7')),
-])
-
-def test_operate(value1, value2, operation, expected):
+def test_operate(a, b, operation, expected):
     """
     Test for the operate method of calculation class for various operations. This test verifies that the calculation class will perform operations like add, subtract, multiply,
     divide properly
 
     Args : 
-    value1, value2 : (Decimal) : The Operands.
+    a, b : (Decimal) : The Operands.
     operation(function) : the operation that needs to be performed.
     expected (Decimal) : The expected result for the operation performed.
 
     Raises:
     AssertionError : If the calculated result dont match with the expected result.
     """
-    calc = Calculation(value1, value2, operation)
+    calc = Calculation(a, b, operation)
     assert calc.operate() == expected, f"Operation {operation.__name__} has been failed!!"
 
 def test__repr():
@@ -59,5 +46,5 @@ def test_dividebyzero():
         AssertionError: If a ValueError with the specific message is not raised
     '''
     obj = Calculation(Decimal('10'), Decimal('0'), divide)
-    with pytest.raises(ValueError, match="DivideByZero Exception Occured"):
+    with pytest.raises(ValueError, match="Cannot divide by zero"):
         obj.operate()
