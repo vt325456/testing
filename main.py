@@ -21,7 +21,7 @@ def calculate_and_print(a, b, operation):
         print(f"Invalid number input: {a} or {b} is not a valid number.")
     except ZeroDivisionError:
         print("Error: Division by zero.")
-    except Exception as e: # Catch-all for unexpected errors
+    except Exception as e:
         print(f"An error occurred: {e}")
 
 def main():
