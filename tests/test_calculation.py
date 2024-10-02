@@ -8,7 +8,7 @@ It will use pytest and parametrize, testing and the decimal module to precide de
 from decimal import Decimal
 import pytest
 from calculator.Calculation import Calculation
-from calculator.operations import add,subtract,multiply,divide
+from calculator.operations import add,divide
 
 def test_operate(a, b, operation, expected):
     """
